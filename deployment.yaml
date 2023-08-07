@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: DeploymentConfig
+metadata:
+  name: helloworldapp
+spec:
+  replicas: 1
+  selector:
+    app: helloworldapp
+  template:
+    metadata:
+      labels:
+        app: helloworldapp
+    spec:
+      containers:
+        - name: helloworldapp
+          image: helloworldapp:${BUILD_NUMBER}
+          ports:
+            - containerPort: 80
