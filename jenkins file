@@ -1,0 +1,25 @@
+node {
+    def dockerImage
+    stage('Checkout') {
+        checkout scm
+    }
+
+    stage('Build .NET App') {
+        bat "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\MSBuild\\Current\\Bin\\MSBuild.exe\" HelloWorldApp\\HelloWorldApp.csproj"
+    }
+
+    stage('Build Docker Image') {
+        dockerImage = docker.build("helloworldapp:${env.BUILD_NUMBER}", "./HelloWorldApp")
+    }
+
+    stage('Push Docker Image') {
+        docker.withRegistry('https://index.docker.io/v1/', 'docker-credentials') {
+            dockerImage.push()
+        }
+    }
+
+    stage('Deploy to OpenShift') {
+        def depConfig = 'deployment.yaml'
+        sh "oc apply -f ${depConfig}"
+    }
+}
