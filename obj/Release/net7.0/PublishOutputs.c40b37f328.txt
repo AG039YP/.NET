@@ -1,0 +1,7 @@
+/home/candi/Documents/HelloWorldWebApp/bin/Release/net7.0/publish/HelloWorldWebApp
+/home/candi/Documents/HelloWorldWebApp/bin/Release/net7.0/publish/appsettings.Development.json
+/home/candi/Documents/HelloWorldWebApp/bin/Release/net7.0/publish/appsettings.json
+/home/candi/Documents/HelloWorldWebApp/bin/Release/net7.0/publish/HelloWorldWebApp.dll
+/home/candi/Documents/HelloWorldWebApp/bin/Release/net7.0/publish/HelloWorldWebApp.deps.json
+/home/candi/Documents/HelloWorldWebApp/bin/Release/net7.0/publish/HelloWorldWebApp.runtimeconfig.json
+/home/candi/Documents/HelloWorldWebApp/bin/Release/net7.0/publish/HelloWorldWebApp.pdb
